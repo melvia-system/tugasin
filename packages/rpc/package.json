@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "bun --env-file=./../../.env run --hot src/index.ts",
+    "migration:gen": "bun --env-file=./../../.env prisma generate",
+    "migration:run": "bun --env-file=./../../.env prisma migrate dev"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.2.2",
+    "@prisma/client": "5.15.0",
+    "hono": "^4.4.4",
+    "prisma": "^5.15.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "type": "module"
+}

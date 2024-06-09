@@ -1,0 +1,17 @@
+{
+  "name": "tugas-in",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.15.0",
+    "prisma": "^5.15.0"
+  }
+}

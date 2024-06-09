@@ -1,0 +1,28 @@
+---
+import { Api } from '../services/todo'
+import Sidebar from '../components/Sidebar.vue'
+const data = await Api.Fetch<Api.Schema.Todo.Project[]>(Api.Todo.Project.List())
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>tugas.in</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
+	</head>
+	<body>
+		<div class="w-screen min-h-screen bg-black flex">
+            <Sidebar client:load projects={data?.data || []} />
+            <div class="flex-1 bg-white flex flex-col">
+                <div class="flex-1 container max-w-screen-md mx-auto px-6 w-full py-6">
+                    <slot />
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

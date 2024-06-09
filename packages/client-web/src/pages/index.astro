@@ -1,0 +1,11 @@
+---
+import PageLayout from '../layouts/page.astro'
+import TaskProject from '../components/TaskProject.vue'
+import { todoStore } from '../stores/todo'
+---
+
+<PageLayout>
+    <div>
+        <TaskProject client:load />
+    </div>
+</PageLayout>
